@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>hello,hexo</title>
+    <url>/blog/2018/01/01/hello-hexo/</url>
+    <content><![CDATA[<h1 id="Helo-world"><a href="#Helo-world" class="headerlink" title="Helo world"></a>Helo world</h1><p>测试</p>
+]]></content>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My New Post</title>
+    <url>/blog/2018/01/01/My-New-Post/</url>
+    <content><![CDATA[<h2 id="hexo测试部署github"><a href="#hexo测试部署github" class="headerlink" title="hexo测试部署github"></a>hexo测试部署github</h2>]]></content>
+  </entry>
+</search>
