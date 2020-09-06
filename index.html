@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":300,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="维持我们钻研的，可能是我们的笨拙🐌">
+<meta property="og:type" content="website">
+<meta property="og:title" content="杨嘉浩的博客">
+<meta property="og:url" content="https://github.com/yangjiahao0128/blog/index.html">
+<meta property="og:site_name" content="杨嘉浩的博客">
+<meta property="og:description" content="维持我们钻研的，可能是我们的笨拙🐌">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="杨嘉浩">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/yangjiahao0128/blog/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>杨嘉浩的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">杨嘉浩的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">前端个人笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/yangjiahao0128/blog/2018/01/01/My-New-Post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/20180809193344.jpg">
+      <meta itemprop="name" content="杨嘉浩">
+      <meta itemprop="description" content="维持我们钻研的，可能是我们的笨拙🐌">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨嘉浩的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2018/01/01/My-New-Post/" class="post-title-link" itemprop="url">Vue-cli@2.0脚手架搭建与打包</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-01-01 12:00:00" itemprop="dateCreated datePublished" datetime="2018-01-01T12:00:00+08:00">2018-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-08-09 18:09:21" itemprop="dateModified" datetime="2018-08-09T18:09:21+08:00">2018-08-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://upload-images.jianshu.io/upload_images/7255677-087930a3da74c424.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vuejs"></p>
+<h1 id="一、vue-cli脚手架"><a href="#一、vue-cli脚手架" class="headerlink" title="一、vue-cli脚手架"></a>一、vue-cli脚手架</h1><p><code>vue.js</code> 核心构成：vuex，vue-cli，vue-router，vue-resource<br>&nbsp;&nbsp;&nbsp;&nbsp;<em>1.1vue-cli</em> ：脚手架，为了保证各施工过程 顺利进行而搭建的工作平台，<br>&nbsp;&nbsp;&nbsp;&nbsp;<em>1.2实际开发</em> ：开发过程中，从零开始构建项目非常的麻烦，所以各种脚手架就应运而生。常见的脚手架：yoeman，express-generator，vue-cli<br>&nbsp;&nbsp;&nbsp;&nbsp;<em>特点</em> ：功能丰富，使用他们能够快速的搭建一个完整的项目，开发者只需要在生成的项目结构的基础上进行开发即可非常高效。<br>&nbsp;&nbsp;&nbsp;&nbsp;极大地降低了webpack的使用难度，并支持热更新，有webpack-dev-server支持，相当于启动了一个请求服务器，帮你搭建了一个测试环境，最为开发者只需要关注开发就ok</p>
+<h1 id="二、安装vue-cli"><a href="#二、安装vue-cli" class="headerlink" title="二、安装vue-cli"></a>二、安装vue-cli</h1><p> &nbsp;&nbsp;<em>2.1</em> 需要使用<code>npm</code>，全局安装<code>webpack</code>，由于从<code>webpack@4.0</code>开始需要安装<code>webpack-cli</code><br>&nbsp;&nbsp;<em>2.2</em> 先执行CMD<br>&nbsp;&nbsp;webpack -v  确认是否全局安装过webpack,没有的话执行 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g webpack</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;再全局安装  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install webpack-cli -g</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;全局安装<code>vue-cli</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g vue-cli  或者  npm install --globel vue-cli</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;安装完成后确认是否安装过：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue -V</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;CMD:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue list        &#x2F;&#x2F;列出可用的模板</span><br></pre></td></tr></table></figure>
+<h1 id="三、利用vue-cli构建项目"><a href="#三、利用vue-cli构建项目" class="headerlink" title="三、利用vue-cli构建项目"></a>三、利用vue-cli构建项目</h1><p>   <em>3.1</em> 首先建一个文件夹<br>   然后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd demo</span><br></pre></td></tr></table></figure>
+<p>   将构建的项目放进demo文件夹<br>   执行： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack + 项目名称</span><br></pre></td></tr></table></figure>
+<p>   执行后显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Project name 确认项目名称</span><br><span class="line">Project description 项目描述</span><br><span class="line">Author  作者</span><br><span class="line">Vue build</span><br><span class="line"> Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY</span><br><span class="line"> allowed in .vue files - render functions are required elsewhere 推荐的运行加编译</span><br><span class="line">Install vue-router  是否安装vue-router</span><br><span class="line">Use ESLint to lint your code 是否使用ESLint管理代码(这块一直又爱又恨)</span><br><span class="line">Set up unit tests 是否建立单元测试</span><br><span class="line">Setup e2e tests with Nightwatch 是否安装端对端的测试</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>vue init webpack项目名称：适用于中大型项目<br>vue init webpack-simple：小型项目</p>
+</blockquote>
+<p>然后 cd 进入项目<br>运行项目 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<h1 id="四、打包上线"><a href="#四、打包上线" class="headerlink" title="四、打包上线"></a>四、打包上线</h1><p>自己的项目放在 <em>src</em> 文件夹下<br>编辑开发完成后打包<br>在<code>cmd</code>中执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>打包成功后：默认会生成 <em>dist</em> 文件夹项目上线，只需要将 <em>dist</em> 文件夹交给后台人员放在服务器就可以了</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;以上，<a href="mailto:&#x56;&#x75;&#101;&#x2d;&#x63;&#x6c;&#105;&#x40;&#50;&#x2e;&#48;">&#x56;&#x75;&#101;&#x2d;&#x63;&#x6c;&#105;&#x40;&#50;&#x2e;&#48;</a>脚手架基本搭建在日常的使用中基本就没有什么大问题了，只要多加练习，配合好用的官网，写起东西来肯定会行云流水。💗</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="杨嘉浩"
+      src="/blog/images/20180809193344.jpg">
+  <p class="site-author-name" itemprop="name">杨嘉浩</p>
+  <div class="site-description" itemprop="description">维持我们钻研的，可能是我们的笨拙🐌</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨嘉浩</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script color='' opacity='' zIndex='' count='' src="/blog/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
