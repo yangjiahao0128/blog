@@ -1,10 +1,10 @@
 ---
 title: Vue-cli@2.0脚手架搭建与打包
-date: 2018-01-01 12:00:00
-updated: 2018-08-09 18:09:21
-tags:
+date: 2019-01-01 12:00:00
+updated: 2019-08-09 18:09:21
+description: 初学者 vue 使用简要
+tags: 'vue'
 ---
-![vuejs](https://upload-images.jianshu.io/upload_images/7255677-087930a3da74c424.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 # 一、vue-cli脚手架
 `vue.js` 核心构成：vuex，vue-cli，vue-router，vue-resource
 &nbsp;&nbsp;&nbsp;&nbsp;_1.1vue-cli_ ：脚手架，为了保证各施工过程 顺利进行而搭建的工作平台，
@@ -73,6 +73,7 @@ npm run dev
 ```
 npm run build
 ```
-打包成功后：默认会生成 *dist* 文件夹项目上线，只需要将 *dist* 文件夹交给后台人员放在服务器就可以了
+打包成功后：默认会生成 *dist* 文件夹项目上线，只需要将 *dist* 文件夹放在`nginx`映射的服务器就可以了
+![vuejs](https://upload-images.jianshu.io/upload_images/7255677-087930a3da74c424.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/800)
 # 小结
 &nbsp;&nbsp;&nbsp;&nbsp;以上，Vue-cli@2.0脚手架基本搭建在日常的使用中基本就没有什么大问题了，只要多加练习，配合好用的官网，写起东西来肯定会行云流水。💗
