@@ -20,17 +20,22 @@
     var CONFIG = {"hostname":"github.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":300,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="维持我们钻研的，可能是我们的笨拙🐌">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨嘉浩的博客">
-<meta property="og:url" content="https://github.com/yangjiahao0128/blog/archives/2018/01/index.html">
+  <meta name="description" content="持续更新中......">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端性能优化">
+<meta property="og:url" content="https://github.com/yangjiahao0128/blog/2019/05/05/8s7h3j1h/index.html">
 <meta property="og:site_name" content="杨嘉浩的博客">
-<meta property="og:description" content="维持我们钻研的，可能是我们的笨拙🐌">
+<meta property="og:description" content="持续更新中......">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/blog/2019/05/05/8s7h3j1h/mklm32lk3m2k434313244.webp">
+<meta property="article:published_time" content="2019-05-05T05:01:32.000Z">
+<meta property="article:modified_time" content="2019-06-09T08:10:21.000Z">
 <meta property="article:author" content="杨嘉浩">
+<meta property="article:tag" content="性能优化">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/blog/2019/05/05/8s7h3j1h/mklm32lk3m2k434313244.webp">
 
-<link rel="canonical" href="https://github.com/yangjiahao0128/blog/archives/2018/01/">
+<link rel="canonical" href="https://github.com/yangjiahao0128/blog/2019/05/05/8s7h3j1h/">
 
 
 <script id="page-configurations">
@@ -38,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | 杨嘉浩的博客</title>
+  <title>前端性能优化 | 杨嘉浩的博客</title>
   
 
 
@@ -177,50 +182,102 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 1 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/yangjiahao0128/blog/2019/05/05/8s7h3j1h/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/20180809193344.jpg">
+      <meta itemprop="name" content="杨嘉浩">
+      <meta itemprop="description" content="维持我们钻研的，可能是我们的笨拙🐌">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨嘉浩的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端性能优化
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-05-05 13:01:32" itemprop="dateCreated datePublished" datetime="2019-05-05T13:01:32+08:00">2019-05-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-06-09 16:10:21" itemprop="dateModified" datetime="2019-06-09T16:10:21+08:00">2019-06-09</time>
+              </span>
+
+          
+            <div class="post-description">持续更新中......</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2018</span>
+        <h1 id="网络方面："><a href="#网络方面：" class="headerlink" title="网络方面："></a>网络方面：</h1><ol>
+<li>减少http请求（合并js/css文件、雪碧图、使用base64表示简单的图片）；</li>
+<li>减少资源体积（gzip压缩、js混淆、css压缩、图片压缩）；</li>
+<li>缓存（DNS缓存、CDN部署与缓存、http缓存）；</li>
+<li>移动端优化（首屏加载优化、慎用web字体）；</li>
+</ol>
+<h1 id="渲染及dom操作："><a href="#渲染及dom操作：" class="headerlink" title="渲染及dom操作："></a>渲染及dom操作：</h1><ol>
+<li>优化网页渲染（文件引用顺序css/js、避免内联样式）；</li>
+<li>DOM操作优化（多使用className、多事件代理、多使用css动画、减少DOM操作、少使用css表达式）；</li>
+<li>操作规范（img/iframe中src、css属性为0省略单位、禁止图片缩放、CSS减少重复多继承）；</li>
+<li>移动端优化（长列表优化、防抖和节流、<del>~</del>能力不足，待探究）；</li>
+</ol>
+<h1 id="数据方面："><a href="#数据方面：" class="headerlink" title="数据方面："></a>数据方面：</h1><ol>
+<li>图片加载处理（预加载、 懒加载、首屏加载时进度条展示）；</li>
+<li>异步请求的优化（使用正常的json数据格式进行交互、数据缓存、数据埋点与统计）；</li>
+</ol>
+<img src="/blog/2019/05/05/8s7h3j1h/mklm32lk3m2k434313244.webp" class="" title="性能优化图">
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-01-01T12:00:00+08:00"
-              content="2018-01-01">
-          01-01
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag"># 性能优化</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/2018/01/01/My-New-Post/" itemprop="url">
-            <span itemprop="name">Vue-cli@2.0脚手架搭建与打包</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2019/01/01/My-New-Post/" rel="prev" title="Vue-cli@2.0脚手架搭建与打包">
+      <i class="fa fa-chevron-left"></i> Vue-cli@2.0脚手架搭建与打包
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -273,6 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">网络方面：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E5%8F%8Adom%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">渲染及dom操作：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%96%B9%E9%9D%A2%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">数据方面：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -288,9 +346,15 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
