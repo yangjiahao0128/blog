@@ -391,12 +391,11 @@ code {
   font-family: consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
 }
 code {
-  background: #eee;
-  border-radius: 3px;
-  color: #555;
-  padding: 2px 4px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+    color: #c7254e;
+    background-color: #d8d3d3;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 14px;
 }
 .highlight *::selection {
   background: #d6d6d6;
