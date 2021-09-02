@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":300,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="React项目中mobx的应用">
+<meta property="og:url" content="https://github.com/yangjiahao0128/blog/2021/09/01/React%E9%A1%B9%E7%9B%AE%E4%B8%ADmobx%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
+<meta property="og:site_name" content="杨嘉浩的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-31T16:00:00.000Z">
+<meta property="article:author" content="杨嘉浩">
+<meta property="article:tag" content="react">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/yangjiahao0128/blog/2021/09/01/React%E9%A1%B9%E7%9B%AE%E4%B8%ADmobx%E7%9A%84%E5%BA%94%E7%94%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>React项目中mobx的应用 | 杨嘉浩的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">杨嘉浩的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">前端个人笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/yangjiahao0128/blog/2021/09/01/React%E9%A1%B9%E7%9B%AE%E4%B8%ADmobx%E7%9A%84%E5%BA%94%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/20180809193344.jpg">
+      <meta itemprop="name" content="杨嘉浩">
+      <meta itemprop="description" content="维持我们钻研的，可能是我们的笨拙🐌">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨嘉浩的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          React项目中mobx的应用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-01 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-01T00:00:00+08:00">2021-09-01</time>
+            </span>
+
+          
+            <div class="post-description"> </div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="mobx"><a href="#mobx" class="headerlink" title="mobx"></a>mobx</h1><blockquote>
+<p>可以将React与Mobx结合起来的一个React组件包,支持React和React-Native</p>
+</blockquote>
+<ul>
+<li><code>observable</code>用来声明可观察的数据。</li>
+<li><code>computed</code>是声明可观察数据的演变数据，和 <code>observable</code> 具有同等地位。</li>
+<li><code>action</code> 用来改变<code>observable</code>数据。(<code>action </code>不是必须的可以认为其是较好的约定最好遵循)</li>
+</ul>
+<h1 id="mobx-react"><a href="#mobx-react" class="headerlink" title="mobx-react"></a>mobx-react</h1><blockquote>
+<p>Provider、observer、inject均为是mobx-react提供。</p>
+</blockquote>
+<ul>
+<li><code>Provider</code>以组件的形式存在，用来包裹最外层组件节点，并且传入 <code>store</code>通过<code>context </code>传递给后代组件。</li>
+<li><code>observer</code>装饰的<code>react</code>组件将转换成一个监听者，当<code>observable</code>修饰的数据变化，react组件就会重新渲染。</li>
+<li><code>inject</code>为了使被装饰的组件以<code>props</code>的形式获取到<code>Provider</code>传递过来的数据。</li>
+</ul>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -S mobx mobx-react </span><br></pre></td></tr></table></figure>
+
+<p>  在<code>package.json</code>中配置支持装饰器语法的开发依赖。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;@babel&#x2F;plugin-proposal-decorators&quot;: &quot;^7.4.4&quot;,</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>1.在<code>react</code>项目<code>src</code>文件夹下新建一个用于存放<code>stores</code>的文件夹=&gt;创建一个<code>appStore.js</code>作为项目的<code>store</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import &#123; observable, action &#125; from &#39;mobx&#39;; &#x2F;&#x2F; 引入mobx 提供的方法</span><br><span class="line">class HomeStore &#123;</span><br><span class="line">  @observable userName &#x3D; &quot;杨嘉浩&quot;;  &#x2F;&#x2F; 定义一个作为观察的参数,修改会刷新jsx的view</span><br><span class="line">  ......</span><br><span class="line">  @observable xxx &#x3D; &quot;&quot;;</span><br><span class="line">  </span><br><span class="line">  &#x2F;&#x2F;  用与改变observable数据</span><br><span class="line">  @action changeName &#x3D; (name)&#x3D;&gt;&#123;</span><br><span class="line">      &#x2F;&#x2F; 在jsx中调用 changeName 传入需要更改的 userName</span><br><span class="line">      this.userName &#x3D; name;</span><br><span class="line">  &#125;</span><br><span class="line">  ......</span><br><span class="line">&#x2F;&#x2F;  可以定义多个 action 搭配 ant Toast 做一些人性化的提示</span><br><span class="line">&#125;</span><br><span class="line">const homeStore &#x3D; new HomeStore ();</span><br><span class="line"></span><br><span class="line">export default homeStore;</span><br></pre></td></tr></table></figure>
+<p>这样就是一个通过<code>mobx</code>对一个简单的<code>store</code>的创建,就可以在项目中引入使用。</p>
+<p>2.在<code>src</code>文件夹下创建<code>Home.jsx</code>,引入定义的<code>store</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import &#123; observer, inject &#125; from &#39;mobx-react&#39;;</span><br><span class="line">&#x2F;&#x2F; 通过 context 将 store 注入并使得任何层级的子组件可以访问到 store</span><br><span class="line">&#x2F;&#x2F; 将store中的数据注入当前组件，下面会在根组件通过 Provider 组件注入它</span><br><span class="line">@inject(&#39;homeStore&#39;)</span><br><span class="line">&#x2F;&#x2F; 使用@observer装饰的react组件将转换成一个监听者，当&#96;inject&#96;的数据发生变化时，react组件就会重新渲染。</span><br><span class="line">@observer  </span><br><span class="line">export default class Home extends Component &#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state &#x3D; &#123; &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">      console.log(this.props.homeStore)</span><br><span class="line">      &#x2F;&#x2F; 可以通过props拿到定义的 state 与 action</span><br><span class="line">    &#125;</span><br><span class="line">    change()&#123;</span><br><span class="line">      this.props.homeStore.changeName(&quot;浩嘉杨&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">      var &#123; userName &#125; &#x3D; this.props.homeStore;</span><br><span class="line">      return (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;div&gt;用户名:&#123;userName&#125;&lt;&#x2F;div&gt;</span><br><span class="line">          &lt;button onClick&#x3D;&#123;()&#x3D;&gt;&#123;this.change()&#125;&#125;&gt;更改&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.将创建的<code>Home.jsx</code>引入到<code>index.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOM from &#39;react-dom&#39;;</span><br><span class="line">import &#123;Provider&#125; from &#39;mobx-react&#39;;</span><br><span class="line">import baseStore from &#39;.&#x2F;stores&#x2F;baseStore&#39;;</span><br><span class="line"></span><br><span class="line">const stores &#x3D; &#123;</span><br><span class="line">    baseStore,</span><br><span class="line">    &#x2F;&#x2F; 便于引入多个 store</span><br><span class="line">&#125;;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;Provider &#123;...stores&#125;&gt;</span><br><span class="line">        &lt;Page &#x2F;&gt;  &#x2F;&#x2F; 路由组件内容</span><br><span class="line">    &lt;&#x2F;Provider&gt;</span><br><span class="line"> ,document.getElementById(&#39;root&#39;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至此就是<code>react</code>项目中<code>mobx</code>的简单应用了，与<code>action</code>结合异步请求可以实现更多的玩法。提高工作效率的最好办法就是提升自己的能力，还可以给自己增加附加价值。💗</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/react/" rel="tag"># react</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2019/05/05/8s7h3j1h/" rel="prev" title="前端性能优化">
+      <i class="fa fa-chevron-left"></i> 前端性能优化
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mobx"><span class="nav-number">1.</span> <span class="nav-text">mobx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mobx-react"><span class="nav-number">2.</span> <span class="nav-text">mobx-react</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="杨嘉浩"
+      src="/blog/images/20180809193344.jpg">
+  <p class="site-author-name" itemprop="name">杨嘉浩</p>
+  <div class="site-description" itemprop="description">维持我们钻研的，可能是我们的笨拙🐌</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨嘉浩</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script color='' opacity='' zIndex='' count='' src="/blog/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
