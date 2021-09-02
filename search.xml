@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>前端性能优化</title>
+    <url>/blog/2019/05/05/8s7h3j1h/</url>
+    <content><![CDATA[<h1 id="网络方面："><a href="#网络方面：" class="headerlink" title="网络方面："></a>网络方面：</h1><ol>
+<li>减少http请求（合并js/css文件、雪碧图、使用base64表示简单的图片）；</li>
+<li>减少资源体积（gzip压缩、js混淆、css压缩、图片压缩）；</li>
+<li>缓存（DNS缓存、CDN部署与缓存、http缓存）；</li>
+<li>移动端优化（首屏加载优化、慎用web字体）；</li>
+</ol>
+<h1 id="渲染及dom操作："><a href="#渲染及dom操作：" class="headerlink" title="渲染及dom操作："></a>渲染及dom操作：</h1><ol>
+<li>优化网页渲染（文件引用顺序css/js、避免内联样式）；</li>
+<li>DOM操作优化（多使用className、多事件代理、多使用css动画、减少DOM操作、少使用css表达式）；</li>
+<li>操作规范（img/iframe中src、css属性为0省略单位、禁止图片缩放、CSS减少重复多继承）；</li>
+<li>移动端优化（长列表优化、防抖和节流、<del>~</del>能力不足，待探究）；</li>
+</ol>
+<h1 id="数据方面："><a href="#数据方面：" class="headerlink" title="数据方面："></a>数据方面：</h1><ol>
+<li>图片加载处理（预加载、 懒加载、首屏加载时进度条展示）；</li>
+<li>异步请求的优化（使用正常的json数据格式进行交互、数据缓存、数据埋点与统计）；</li>
+</ol>
+<img src="/blog/2019/05/05/8s7h3j1h/mklm32lk3m2k434313244.webp" class="" title="性能优化图">]]></content>
+      <tags>
+        <tag>小知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js获取下周一日期</title>
+    <url>/blog/2020/03/05/js%E8%8E%B7%E5%8F%96%E4%B8%8B%E5%91%A8%E4%B8%80%E6%97%A5%E6%9C%9F/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取下周一日期</span><br><span class="line">var date &#x3D; new Date();</span><br><span class="line">    date.setDate(date.getDate() + (8 - date.getDay()));</span><br><span class="line">var y &#x3D; date.getFullYear(); </span><br><span class="line">var m &#x3D; date.getMonth() + 1; </span><br><span class="line">var d &#x3D; date.getDate();</span><br><span class="line">var mvar &#x3D; &#39;&#39;,dvar &#x3D; &#39;&#39;;</span><br><span class="line">m &lt; 10 ? mvar &#x3D; &#39;0&#39; + m : mvar &#x3D; m;</span><br><span class="line">d &lt; 10 ? dvar &#x3D; &#39;0&#39; + d : dvar &#x3D; d;</span><br><span class="line">console.log(y + &quot;-&quot; + mvar + &#39;-&#39; + dvar)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>小知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>React项目中mobx的应用</title>
     <url>/blog/2021/09/01/React%E9%A1%B9%E7%9B%AE%E4%B8%ADmobx%E7%9A%84%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<h1 id="mobx"><a href="#mobx" class="headerlink" title="mobx"></a>mobx</h1><blockquote>
@@ -65,43 +98,10 @@
 <h1 id="四、打包上线"><a href="#四、打包上线" class="headerlink" title="四、打包上线"></a>四、打包上线</h1><p>自己的项目放在 <em>src</em> 文件夹下<br>编辑开发完成后打包<br>在<code>cmd</code>中执行</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
 <p>打包成功后：默认会生成 <em>dist</em> 文件夹项目上线，只需要将 <em>dist</em> 文件夹放在<code>nginx</code>映射的服务器就可以了<br><img src="https://upload-images.jianshu.io/upload_images/7255677-087930a3da74c424.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/800" alt="vuejs"></p>
-<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;以上，<a href="mailto:&#86;&#117;&#101;&#45;&#99;&#x6c;&#105;&#x40;&#50;&#46;&#x30;">&#86;&#117;&#101;&#45;&#99;&#x6c;&#105;&#x40;&#50;&#46;&#x30;</a>脚手架基本搭建在日常的使用中基本就没有什么大问题了，只要多加练习，配合好用的官网，写起东西来肯定会行云流水。💗</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;以上，<a href="mailto:&#x56;&#117;&#x65;&#45;&#99;&#x6c;&#105;&#x40;&#x32;&#x2e;&#48;">&#x56;&#117;&#x65;&#45;&#99;&#x6c;&#105;&#x40;&#x32;&#x2e;&#48;</a>脚手架基本搭建在日常的使用中基本就没有什么大问题了，只要多加练习，配合好用的官网，写起东西来肯定会行云流水。💗</p>
 ]]></content>
       <tags>
         <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>js获取下周一日期</title>
-    <url>/blog/2020/03/05/js%E8%8E%B7%E5%8F%96%E4%B8%8B%E5%91%A8%E4%B8%80%E6%97%A5%E6%9C%9F/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取下周一日期</span><br><span class="line">var date &#x3D; new Date();</span><br><span class="line">    date.setDate(date.getDate() + (8 - date.getDay()));</span><br><span class="line">var y &#x3D; date.getFullYear(); </span><br><span class="line">var m &#x3D; date.getMonth() + 1; </span><br><span class="line">var d &#x3D; date.getDate();</span><br><span class="line">var mvar &#x3D; &#39;&#39;,dvar &#x3D; &#39;&#39;;</span><br><span class="line">m &lt; 10 ? mvar &#x3D; &#39;0&#39; + m : mvar &#x3D; m;</span><br><span class="line">d &lt; 10 ? dvar &#x3D; &#39;0&#39; + d : dvar &#x3D; d;</span><br><span class="line">console.log(y + &quot;-&quot; + mvar + &#39;-&#39; + dvar)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>小知识</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端性能优化</title>
-    <url>/blog/2019/05/05/8s7h3j1h/</url>
-    <content><![CDATA[<h1 id="网络方面："><a href="#网络方面：" class="headerlink" title="网络方面："></a>网络方面：</h1><ol>
-<li>减少http请求（合并js/css文件、雪碧图、使用base64表示简单的图片）；</li>
-<li>减少资源体积（gzip压缩、js混淆、css压缩、图片压缩）；</li>
-<li>缓存（DNS缓存、CDN部署与缓存、http缓存）；</li>
-<li>移动端优化（首屏加载优化、慎用web字体）；</li>
-</ol>
-<h1 id="渲染及dom操作："><a href="#渲染及dom操作：" class="headerlink" title="渲染及dom操作："></a>渲染及dom操作：</h1><ol>
-<li>优化网页渲染（文件引用顺序css/js、避免内联样式）；</li>
-<li>DOM操作优化（多使用className、多事件代理、多使用css动画、减少DOM操作、少使用css表达式）；</li>
-<li>操作规范（img/iframe中src、css属性为0省略单位、禁止图片缩放、CSS减少重复多继承）；</li>
-<li>移动端优化（长列表优化、防抖和节流、<del>~</del>能力不足，待探究）；</li>
-</ol>
-<h1 id="数据方面："><a href="#数据方面：" class="headerlink" title="数据方面："></a>数据方面：</h1><ol>
-<li>图片加载处理（预加载、 懒加载、首屏加载时进度条展示）；</li>
-<li>异步请求的优化（使用正常的json数据格式进行交互、数据缓存、数据埋点与统计）；</li>
-</ol>
-<img src="/blog/2019/05/05/8s7h3j1h/mklm32lk3m2k434313244.webp" class="" title="性能优化图">]]></content>
-      <tags>
-        <tag>小知识</tag>
       </tags>
   </entry>
 </search>
