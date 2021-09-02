@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>js获取下周一日期</title>
+    <url>/blog/2020/03/05/js%E8%8E%B7%E5%8F%96%E4%B8%8B%E5%91%A8%E4%B8%80%E6%97%A5%E6%9C%9F/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取下周一日期</span><br><span class="line">var date &#x3D; new Date();</span><br><span class="line">    date.setDate(date.getDate() + (8 - date.getDay()));</span><br><span class="line">var y &#x3D; date.getFullYear(); </span><br><span class="line">var m &#x3D; date.getMonth() + 1; </span><br><span class="line">var d &#x3D; date.getDate();</span><br><span class="line">var mvar &#x3D; &#39;&#39;,dvar &#x3D; &#39;&#39;;</span><br><span class="line">m &lt; 10 ? mvar &#x3D; &#39;0&#39; + m : mvar &#x3D; m;</span><br><span class="line">d &lt; 10 ? dvar &#x3D; &#39;0&#39; + d : dvar &#x3D; d;</span><br><span class="line">console.log(y + &quot;-&quot; + mvar + &#39;-&#39; + dvar)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>小知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>前端性能优化</title>
     <url>/blog/2019/05/05/8s7h3j1h/</url>
     <content><![CDATA[<h1 id="网络方面："><a href="#网络方面：" class="headerlink" title="网络方面："></a>网络方面：</h1><ol>
@@ -52,7 +61,7 @@
 <h1 id="四、打包上线"><a href="#四、打包上线" class="headerlink" title="四、打包上线"></a>四、打包上线</h1><p>自己的项目放在 <em>src</em> 文件夹下<br>编辑开发完成后打包<br>在<code>cmd</code>中执行</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
 <p>打包成功后：默认会生成 <em>dist</em> 文件夹项目上线，只需要将 <em>dist</em> 文件夹放在<code>nginx</code>映射的服务器就可以了<br><img src="https://upload-images.jianshu.io/upload_images/7255677-087930a3da74c424.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/800" alt="vuejs"></p>
-<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;以上，<a href="mailto:&#86;&#117;&#101;&#x2d;&#99;&#108;&#105;&#64;&#50;&#x2e;&#48;">&#86;&#117;&#101;&#x2d;&#99;&#108;&#105;&#64;&#50;&#x2e;&#48;</a>脚手架基本搭建在日常的使用中基本就没有什么大问题了，只要多加练习，配合好用的官网，写起东西来肯定会行云流水。💗</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;以上，<a href="mailto:&#86;&#x75;&#101;&#45;&#99;&#x6c;&#105;&#64;&#50;&#46;&#x30;">&#86;&#x75;&#101;&#45;&#99;&#x6c;&#105;&#64;&#50;&#46;&#x30;</a>脚手架基本搭建在日常的使用中基本就没有什么大问题了，只要多加练习，配合好用的官网，写起东西来肯定会行云流水。💗</p>
 ]]></content>
       <tags>
         <tag>vue</tag>
@@ -93,15 +102,6 @@
 ]]></content>
       <tags>
         <tag>react</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>js获取下周一日期</title>
-    <url>/blog/2020/03/05/js%E8%8E%B7%E5%8F%96%E4%B8%8B%E5%91%A8%E4%B8%80%E6%97%A5%E6%9C%9F/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取下周一日期</span><br><span class="line">var date &#x3D; new Date();</span><br><span class="line">    date.setDate(date.getDate() + (8 - date.getDay()));</span><br><span class="line">var y &#x3D; date.getFullYear(); </span><br><span class="line">var m &#x3D; date.getMonth() + 1; </span><br><span class="line">var d &#x3D; date.getDate();</span><br><span class="line">var mvar &#x3D; &#39;&#39;,dvar &#x3D; &#39;&#39;;</span><br><span class="line">m &lt; 10 ? mvar &#x3D; &#39;0&#39; + m : mvar &#x3D; m;</span><br><span class="line">d &lt; 10 ? dvar &#x3D; &#39;0&#39; + d : dvar &#x3D; d;</span><br><span class="line">console.log(y + &quot;-&quot; + mvar + &#39;-&#39; + dvar)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>小知识</tag>
       </tags>
   </entry>
 </search>
