@@ -1101,7 +1101,7 @@ pre .javascript .function {
 .menu-item-active a,
 .menu .menu-item a:hover,
 .menu .menu-item span.exturl:hover {
-  background: var(--menu-item-bg-color);
+  background: rgba(245,245,245,0.6);
 }
 .use-motion .menu-item {
   opacity: 0;
@@ -1176,7 +1176,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9f16d9;
+  background: #3d6f8a;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2266,7 +2266,10 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .header-inner {
-  background: rgba(255,255,255,0.58);
+  background: url("https://picsum.photos/375/266");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 112px;
   border-radius: initial;
   box-shadow: initial;
   overflow: hidden;
