@@ -25,40 +25,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue-cli@2.0脚手架搭建与打包</title>
-    <url>/blog/2019/01/01/Vue-cli@2.0%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%8E%E6%89%93%E5%8C%85/</url>
-    <content><![CDATA[<h1 id="一、vue-cli脚手架"><a href="#一、vue-cli脚手架" class="headerlink" title="一、vue-cli脚手架"></a>一、vue-cli脚手架</h1><p><code>vue.js</code> 核心构成：vuex，vue-cli，vue-router，vue-resource<br>&nbsp;&nbsp;&nbsp;&nbsp;<em>1.1vue-cli</em> ：脚手架，为了保证各施工过程 顺利进行而搭建的工作平台，<br>&nbsp;&nbsp;&nbsp;&nbsp;<em>1.2实际开发</em> ：开发过程中，从零开始构建项目非常的麻烦，所以各种脚手架就应运而生。常见的脚手架：yoeman，express-generator，vue-cli<br>&nbsp;&nbsp;&nbsp;&nbsp;<em>特点</em> ：功能丰富，使用他们能够快速的搭建一个完整的项目，开发者只需要在生成的项目结构的基础上进行开发即可非常高效。<br>&nbsp;&nbsp;&nbsp;&nbsp;极大地降低了webpack的使用难度，并支持热更新，有webpack-dev-server支持，相当于启动了一个请求服务器，帮你搭建了一个测试环境，最为开发者只需要关注开发就ok</p>
-<h1 id="二、安装vue-cli"><a href="#二、安装vue-cli" class="headerlink" title="二、安装vue-cli"></a>二、安装vue-cli</h1><p> &nbsp;&nbsp;<em>2.1</em> 需要使用<code>npm</code>，全局安装<code>webpack</code>，由于从<code>webpack@4.0</code>开始需要安装<code>webpack-cli</code><br>&nbsp;&nbsp;<em>2.2</em> 先执行CMD<br>&nbsp;&nbsp;webpack -v  确认是否全局安装过webpack,没有的话执行 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install -g webpack</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;再全局安装  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install webpack-cli -g</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;全局安装<code>vue-cli</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g vue-cli  或者  npm install --globel vue-cli</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;安装完成后确认是否安装过：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vue -V</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;CMD:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vue list        &#x2F;&#x2F;列出可用的模板</span><br></pre></td></tr></table></figure>
-<h1 id="三、利用vue-cli构建项目"><a href="#三、利用vue-cli构建项目" class="headerlink" title="三、利用vue-cli构建项目"></a>三、利用vue-cli构建项目</h1><p>   <em>3.1</em> 首先建一个文件夹<br>   然后：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd demo</span><br></pre></td></tr></table></figure>
-<p>   将构建的项目放进demo文件夹<br>   执行： </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vue init webpack + 项目名称</span><br></pre></td></tr></table></figure>
-<p>   执行后显示：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Project name 确认项目名称</span><br><span class="line">Project description 项目描述</span><br><span class="line">Author  作者</span><br><span class="line">Vue build</span><br><span class="line"> Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY</span><br><span class="line"> allowed in .vue files - render functions are required elsewhere 推荐的运行加编译</span><br><span class="line">Install vue-router  是否安装vue-router</span><br><span class="line">Use ESLint to lint your code 是否使用ESLint管理代码(这块一直又爱又恨)</span><br><span class="line">Set up unit tests 是否建立单元测试</span><br><span class="line">Setup e2e tests with Nightwatch 是否安装端对端的测试</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>vue init webpack项目名称：适用于中大型项目<br>vue init webpack-simple：小型项目</p>
-</blockquote>
-<p>然后 cd 进入项目<br>运行项目 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
-<h1 id="四、打包上线"><a href="#四、打包上线" class="headerlink" title="四、打包上线"></a>四、打包上线</h1><p>自己的项目放在 <em>src</em> 文件夹下<br>编辑开发完成后打包<br>在<code>cmd</code>中执行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
-<p>打包成功后：默认会生成 <em>dist</em> 文件夹项目上线，只需要将 <em>dist</em> 文件夹放在<code>nginx</code>映射的服务器就可以了<br><img src="https://upload-images.jianshu.io/upload_images/7255677-087930a3da74c424.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/800" alt="vuejs"></p>
-<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;以上，<a href="mailto:&#86;&#x75;&#x65;&#45;&#x63;&#108;&#105;&#x40;&#x32;&#x2e;&#x30;">&#86;&#x75;&#x65;&#45;&#x63;&#108;&#105;&#x40;&#x32;&#x2e;&#x30;</a>脚手架基本搭建在日常的使用中基本就没有什么大问题了，只要多加练习，配合好用的官网，写起东西来肯定会行云流水。💗</p>
-]]></content>
-      <tags>
-        <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>React项目中mobx的应用</title>
     <url>/blog/2021/09/01/React%E9%A1%B9%E7%9B%AE%E4%B8%ADmobx%E7%9A%84%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<h1 id="mobx"><a href="#mobx" class="headerlink" title="mobx"></a>mobx</h1><blockquote>
@@ -93,6 +59,40 @@
 ]]></content>
       <tags>
         <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue-cli@2.0脚手架搭建与打包</title>
+    <url>/blog/2019/01/01/Vue-cli@2.0%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%8E%E6%89%93%E5%8C%85/</url>
+    <content><![CDATA[<h1 id="一、vue-cli脚手架"><a href="#一、vue-cli脚手架" class="headerlink" title="一、vue-cli脚手架"></a>一、vue-cli脚手架</h1><p><code>vue.js</code> 核心构成：vuex，vue-cli，vue-router，vue-resource<br>&nbsp;&nbsp;&nbsp;&nbsp;<em>1.1vue-cli</em> ：脚手架，为了保证各施工过程 顺利进行而搭建的工作平台，<br>&nbsp;&nbsp;&nbsp;&nbsp;<em>1.2实际开发</em> ：开发过程中，从零开始构建项目非常的麻烦，所以各种脚手架就应运而生。常见的脚手架：yoeman，express-generator，vue-cli<br>&nbsp;&nbsp;&nbsp;&nbsp;<em>特点</em> ：功能丰富，使用他们能够快速的搭建一个完整的项目，开发者只需要在生成的项目结构的基础上进行开发即可非常高效。<br>&nbsp;&nbsp;&nbsp;&nbsp;极大地降低了webpack的使用难度，并支持热更新，有webpack-dev-server支持，相当于启动了一个请求服务器，帮你搭建了一个测试环境，最为开发者只需要关注开发就ok</p>
+<h1 id="二、安装vue-cli"><a href="#二、安装vue-cli" class="headerlink" title="二、安装vue-cli"></a>二、安装vue-cli</h1><p> &nbsp;&nbsp;<em>2.1</em> 需要使用<code>npm</code>，全局安装<code>webpack</code>，由于从<code>webpack@4.0</code>开始需要安装<code>webpack-cli</code><br>&nbsp;&nbsp;<em>2.2</em> 先执行CMD<br>&nbsp;&nbsp;webpack -v  确认是否全局安装过webpack,没有的话执行 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install -g webpack</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;再全局安装  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install webpack-cli -g</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;全局安装<code>vue-cli</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g vue-cli  或者  npm install --globel vue-cli</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;安装完成后确认是否安装过：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vue -V</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;CMD:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vue list        &#x2F;&#x2F;列出可用的模板</span><br></pre></td></tr></table></figure>
+<h1 id="三、利用vue-cli构建项目"><a href="#三、利用vue-cli构建项目" class="headerlink" title="三、利用vue-cli构建项目"></a>三、利用vue-cli构建项目</h1><p>   <em>3.1</em> 首先建一个文件夹<br>   然后：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd demo</span><br></pre></td></tr></table></figure>
+<p>   将构建的项目放进demo文件夹<br>   执行： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vue init webpack + 项目名称</span><br></pre></td></tr></table></figure>
+<p>   执行后显示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Project name 确认项目名称</span><br><span class="line">Project description 项目描述</span><br><span class="line">Author  作者</span><br><span class="line">Vue build</span><br><span class="line"> Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY</span><br><span class="line"> allowed in .vue files - render functions are required elsewhere 推荐的运行加编译</span><br><span class="line">Install vue-router  是否安装vue-router</span><br><span class="line">Use ESLint to lint your code 是否使用ESLint管理代码(这块一直又爱又恨)</span><br><span class="line">Set up unit tests 是否建立单元测试</span><br><span class="line">Setup e2e tests with Nightwatch 是否安装端对端的测试</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>vue init webpack项目名称：适用于中大型项目<br>vue init webpack-simple：小型项目</p>
+</blockquote>
+<p>然后 cd 进入项目<br>运行项目 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<h1 id="四、打包上线"><a href="#四、打包上线" class="headerlink" title="四、打包上线"></a>四、打包上线</h1><p>自己的项目放在 <em>src</em> 文件夹下<br>编辑开发完成后打包<br>在<code>cmd</code>中执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>打包成功后：默认会生成 <em>dist</em> 文件夹项目上线，只需要将 <em>dist</em> 文件夹放在<code>nginx</code>映射的服务器就可以了<br><img src="https://upload-images.jianshu.io/upload_images/7255677-087930a3da74c424.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/800" alt="vuejs"></p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;以上，<a href="mailto:&#86;&#117;&#101;&#45;&#x63;&#108;&#x69;&#64;&#50;&#46;&#48;">&#86;&#117;&#101;&#45;&#x63;&#108;&#x69;&#64;&#50;&#46;&#48;</a>脚手架基本搭建在日常的使用中基本就没有什么大问题了，只要多加练习，配合好用的官网，写起东西来肯定会行云流水。💗</p>
+]]></content>
+      <tags>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
