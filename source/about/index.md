@@ -9,3 +9,5 @@ type: "about"
 精通CSS、JavaScript、PHP、C、C++、java、Ruby、Perl、Lisp、python、Objective-C、ActionScript等单词的拼写
 
 熟悉Windows、Linux、Mac、Android、IOS等系统的开关机
+
+掌握哈利波特一半魔法的铲屎官
